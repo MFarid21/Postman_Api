@@ -1,0 +1,1426 @@
+{
+	"info": {
+		"_postman_id": "7575c880-d543-4b4a-b53d-fcd5cf920f61",
+		"name": "Learn_Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostmanBDD",
+			"item": [
+				{
+					"name": "Setup postmanBDD",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setGlobalVariable('pm', responseBody) // public",
+									"// private"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://bigstickcarpet.com/postman-bdd/dist/postman-bdd.js",
+							"protocol": "http",
+							"host": [
+								"bigstickcarpet",
+								"com"
+							],
+							"path": [
+								"postman-bdd",
+								"dist",
+								"postman-bdd.js"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST - Student Signup",
+			"item": [
+				{
+					"name": "Register new student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"Farid\",\n    \"lastName\" : \"api\",\n    \"email\"     : \"Ttestapi@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"female\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "First name with 3 char",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"days\",\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"male\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "First name as empty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"\",\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"male\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "First name more than 3 char",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"da\",\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"male\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "First name as NULL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : null,\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"male\",\n    \"agree\"     : false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gender as invalid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"hassan\",\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"mallee\" ,\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gender as null",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : null,\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"male\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gender as female",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : null,\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"female\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gender as male",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : null,\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"male\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gender as empty string",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : null,\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"\" ,\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gender as int",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"hassan\",\n    \"lastName\": \"api\",\n    \"email\": \"day1api@gmail.com\",\n    \"password\": \"123456\",\n    \"confirmPassword\": \"123456\",\n    \"dob\": {\n        \"year\": 2013,\n        \"month\": 12,\n        \"day\": 31\n    },\n    \"gender\": \"male\",\n    \"agree\": true,\n    \"fake\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding extra properties in json body",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"hassan\",\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : 1212,\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Existing email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"hassan\",\n    \"lastName\" : \"api\",\n    \"email\"     : \"day1api@gmail.com\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"male\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/signup",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST - Student Login",
+			"item": [
+				{
+					"name": "Student Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"Ttestapi@gmail.com\",\n    \"password\": \"test1234\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "qa.taltektc.com/api/login",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT - Update profile",
+			"item": [
+				{
+					"name": "Update profile info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9xYS50YWx0ZWt0Yy5jb20iLCJhdWQiOiJUSEVfQVVESUVOQ0UiLCJpYXQiOjE2MTg5ODAzOTAsIm5iZiI6MTYxODk4MDQwMCwiZXhwIjoxNjE5MDY2NzkwLCJpc19hZG1pbiI6ZmFsc2UsImRhdGEiOnsiaWQiOiI5MSIsImZpcnN0X25hbWUiOiJGYXJpZCIsImxhc3RfbmFtZSI6ImFwaSIsImVtYWlsIjoiVHRlc3RhcGlAZ21haWwuY29tIiwic3R1ZGVudElkIjoiVFRDa3diWmgifX0.iaLrKzVtyo8FcvlVU_1Lfg2Sum9lHcad5tJpsyx4yOA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"Fari\",\n    \"lastName\" : \"api\",\n    \"email\"     : \"Ttestapi@gmail.com\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"female\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/student/TTCkwbZh",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"student",
+								"TTCkwbZh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PATCH - Password",
+			"item": [
+				{
+					"name": "PATCH - Update password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9xYS50YWx0ZWt0Yy5jb20iLCJhdWQiOiJUSEVfQVVESUVOQ0UiLCJpYXQiOjE2MTg5ODQ5NDIsIm5iZiI6MTYxODk4NDk1MiwiZXhwIjoxNjE5MDcxMzQyLCJpc19hZG1pbiI6ZmFsc2UsImRhdGEiOnsiaWQiOiI5MSIsImZpcnN0X25hbWUiOiJGYXJpIiwibGFzdF9uYW1lIjoiYXBpIiwiZW1haWwiOiJUdGVzdGFwaUBnbWFpbC5jb20iLCJzdHVkZW50SWQiOiJUVENrd2JaaCJ9fQ.156EW3EAkHRm1-VObCOpJF9_cGJvf_JjXH-Mxsq1vgU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"test1234\",\n    \"confirmPassword\": \"test1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://qa.taltektc.com/api/updatePassword/TTCkwbZh",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"updatePassword",
+								"TTCkwbZh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET - Student Info",
+			"item": [
+				{
+					"name": "Get Student info by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://qa.taltektc.com/api/student/TTCkwbZh",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"student",
+								"TTCkwbZh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE - Remove student",
+			"item": [
+				{
+					"name": "Delete the student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9xYS50YWx0ZWt0Yy5jb20iLCJhdWQiOiJUSEVfQVVESUVOQ0UiLCJpYXQiOjE2MTY1NDg4MDUsIm5iZiI6MTYxNjU0ODgxNSwiZXhwIjoxNjE2NjM1MjA1LCJpc19hZG1pbiI6ZmFsc2UsImRhdGEiOnsiaWQiOiIxMzQiLCJmaXJzdF9uYW1lIjoiSGFzc2FuIiwibGFzdF9uYW1lIjoiVXBkYXRlIiwiZW1haWwiOiJoYXNhbi51cGRhdGUxQGdtYWlsLmNvbSIsInN0dWRlbnRJZCI6IlRUQ2R3QWlMIn19.m6KjNQPBdqR8AmOtBbbOP-JfoLCeMyUw5DanxxFP3Gs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://qa.taltektc.com/api/student/TTCdwAiL",
+							"protocol": "http",
+							"host": [
+								"qa",
+								"taltektc",
+								"com"
+							],
+							"path": [
+								"api",
+								"student",
+								"TTCdwAiL"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "e2e flow",
+			"item": [
+				{
+					"name": "Register new student",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									" pm.environment.set(\"studentFirstName\", pm.variables.replaceIn(\"{{$randomFirstName}}\"));",
+									" pm.environment.set(\"studentLastName\", pm.variables.replaceIn(\"{{$randomLastName}}\"));",
+									" pm.environment.set(\"studentEmail\", pm.variables.replaceIn(\"{{$randomEmail}}\"));",
+									" pm.environment.set(\"dob_year\", _.random(1935,2013));",
+									"pm.environment.set(\"dob_day\", _.random(1,28));",
+									" pm.environment.set(\"dob_month\", _.random(1,12));"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// const abc=pm.response.json();\r",
+									"// console.log(abc.id);\r",
+									"// let stu_id=pm.variables.replaceIn(abc.id);\r",
+									"// pm.environment.set('Studentid',stu_id);\r",
+									"// pm.test('verifyinf status',function(){\r",
+									"//     pm.response.to.have.status(201);\r",
+									"// })\r",
+									"// pm.test('verifyin success is true',function(){\r",
+									"//     pm.expect(abc.success).to.eql(true);\r",
+									"// })\r",
+									"// pm.test('verifying registration is success',function(){\r",
+									"//     pm.expect(abc.message).to.have.property('Registration Success');\r",
+									"// })\r",
+									"\r",
+									"eval(globals.pm);\r",
+									"describe('Register as a new studens',function(){\r",
+									"    //Assertion,\r",
+									"    it('should return status 201',function(){\r",
+									"response.should.have.status(201);\r",
+									"    })\r",
+									"    //Assertion,\r",
+									"it('should return success as true',function(){\r",
+									" response.body.should.have.property (\"success\").and.equal (true);\r",
+									"})\r",
+									"//Assertion\r",
+									"it('should return success message',function(){\r",
+									"response.body.should.have.property(\"message\").and.equal(\"Registration Success\");\r",
+									"    })\r",
+									"})\r",
+									"\r",
+									"\r",
+									"pm.environment.set(\"student_id\", response.body.id);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"{{studentFirstName}}\",\n    \"lastName\" : \"{{studentLastName}}\",\n    \"email\"     : \"{{studentEmail}}\",\n    \"password\"  : \"123456\",\n    \"confirmPassword\"  : \"123456\",\n    \"dob\"       : {\n        \"year\"      : {{dob_year}},\n        \"month\"     : {{dob_month}},\n        \"day\"       : {{dob_day}}\n    },\n    \"gender\"    : \"female\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/signup",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify if student created",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// assertion ",
+									"//Assert.assertEqual (response.body.data.firstname, enviroment.studentFirstName);",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"eval(globals.pm);",
+									"",
+									"describe('Verify if student is created or not', function() {",
+									"    // Assertion",
+									"    it('should return 200', function() {",
+									"        response.should.have.status(200);",
+									"    });",
+									"      // Assertion",
+									"    it ('should return message as Student Found', function(){",
+									"           response.body.should.have.property (\"message\").and.equal ('Student Found');",
+									"     });",
+									"   // Assertion",
+									"    it ('should return expected first name', function(){",
+									"           response.body.data.should.have.property (\"firstName\").and.equal (environment.studentFirstName);",
+									"     });",
+									"   // Assertion",
+									"    it ('should return expected last name', function(){",
+									"           response.body.data.should.have.property (\"lastName\").and.equal (environment.studentLastName);",
+									"     });",
+									"     // Assertion",
+									"    it ('should return expected student id', function(){",
+									"           response.body.data.should.have.property (\"studentId\").and.equal (environment.student_id);",
+									"     });",
+									"       // Assertion",
+									"    it ('should return expected student email', function(){",
+									"           response.body.data.should.have.property (\"email\").and.equal (environment.studentEmail);",
+									"     });",
+									"        // Assertion",
+									"    it ('should return expected agree value', function(){",
+									"           response.body.data.should.have.property (\"agree\").and.equal (true);",
+									"     });",
+									"        // Assertion",
+									"    it ('should return expected DOB', function(){",
+									"        var x = environment.dob_year;",
+									"        var y = environment.dob_month;",
+									"        var n = environment.dob_day;",
+									"        var expDOB = x+\"-\"+y+\"-\"+n;",
+									"        response.body.data.should.have.property (\"dob\").and.equal(expDOB);",
+									"     });",
+									"    ",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									" pm.environment.set(\"studentFirstName\", pm.variables.replaceIn(\"{{$randomFirstName}}\"));\r",
+									" pm.environment.set(\"studentLastName\", pm.variables.replaceIn(\"{{$randomLastName}}\"));\r",
+									" pm.environment.set(\"studentEmail\", pm.variables.replaceIn(\"{{$randomEmail}}\"));\r",
+									" pm.environment.set(\"dob_year\", _.random(1935,2013));\r",
+									"pm.environment.set(\"dob_day\", _.random(1,28));\r",
+									" pm.environment.set(\"dob_month\", _.random(1,12));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/student/{{student_id}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"{{student_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"eval(globals.pm);\r",
+									"\r",
+									"describe('Verify if student successfully login or not', function() {\r",
+									"    // Assertion\r",
+									"    it('should return status 200 ok', function() {\r",
+									"        response.should.have.status(200);\r",
+									"    })\r",
+									"\r",
+									"    //Assertion\r",
+									"    it('should return success as true',function(){\r",
+									" response.body.should.have.property (\"success\").and.equal (true);\r",
+									"})\r",
+									"\r",
+									"//Assertion\r",
+									"it('should return status code 200',function(){\r",
+									" response.body.should.have.property (\"status code\").and.equal (200);\r",
+									"})\r",
+									"\r",
+									"// Assertion\r",
+									"it('should return message login success',function(){\r",
+									" response.body.should.have.property (\"message\").and.equal ( \"Login Success\");\r",
+									"})\r",
+									"\r",
+									"\r",
+									"\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"{{student_id}}\",\n    \"password\": \"123456\"\n}\n\n\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update profile info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"eval(globals.pm);\r",
+									"\r",
+									"describe('Verify if student successfully login or not', function() {\r",
+									"    // Assertion\r",
+									"    it('should return status 200 ok', function() {\r",
+									"        response.should.have.status(200);\r",
+									"    })\r",
+									"\r",
+									"    //Assertion\r",
+									"    it('should return success as true',function(){\r",
+									" response.body.should.have.property (\"success\").and.equal (true);\r",
+									"})\r",
+									"\r",
+									"\r",
+									"\r",
+									"// Assertion\r",
+									"it('should return message login success',function(){\r",
+									" response.body.should.have.property (\"message\").and.equal ( \"Update success\");\r",
+									"})\r",
+									"\r",
+									"\r",
+									"\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9xYS50YWx0ZWt0Yy5jb20iLCJhdWQiOiJUSEVfQVVESUVOQ0UiLCJpYXQiOjE2MTg5ODQ5NDIsIm5iZiI6MTYxODk4NDk1MiwiZXhwIjoxNjE5MDcxMzQyLCJpc19hZG1pbiI6ZmFsc2UsImRhdGEiOnsiaWQiOiI5MSIsImZpcnN0X25hbWUiOiJGYXJpIiwibGFzdF9uYW1lIjoiYXBpIiwiZW1haWwiOiJUdGVzdGFwaUBnbWFpbC5jb20iLCJzdHVkZW50SWQiOiJUVENrd2JaaCJ9fQ.156EW3EAkHRm1-VObCOpJF9_cGJvf_JjXH-Mxsq1vgU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"Far\",\n    \"lastName\" : \"api\",\n    \"email\"     : \"Ttestapi@gmail.com\",\n    \"dob\"       : {\n        \"year\"      : 2013,\n        \"month\"     : 12,\n        \"day\"       : 31\n    },\n    \"gender\"    : \"female\",\n    \"agree\"     : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/student/TTCkwbZh",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"TTCkwbZh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify after update profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"eval(globals.pm);\r",
+									"\r",
+									"describe('Verify if student is created after updated profile', function() {\r",
+									"    // Assertion\r",
+									"    it('should return 200', function() {\r",
+									"        response.should.have.status(200);\r",
+									"    });\r",
+									"      // Assertion\r",
+									"    it ('should return message as Student Found', function(){\r",
+									"           response.body.should.have.property (\"message\").and.equal ('Student Found');\r",
+									"     });\r",
+									"\r",
+									"})\r",
+									"//    // Assertion\r",
+									"//     it ('should return expected first name', function(){\r",
+									"//            response.body.data.should.have.property (\"firstName\").and.equal (environment.Far);\r",
+									"//      });\r",
+									"//    // Assertion\r",
+									"//     it ('should return expected last name', function(){\r",
+									"//            response.body.data.should.have.property (\"lastName\").and.equal (environment.studentLastName);\r",
+									"//      });\r",
+									"//      // Assertion\r",
+									"//     it ('should return expected student id', function(){\r",
+									"//            response.body.data.should.have.property (\"studentId\").and.equal (environment.student_id);\r",
+									"//      });\r",
+									"//        // Assertion\r",
+									"//     it ('should return expected student email', function(){\r",
+									"//            response.body.data.should.have.property (\"email\").and.equal (environment.studentEmail);\r",
+									"//      });\r",
+									"//         // Assertion\r",
+									"//     it ('should return expected agree value', function(){\r",
+									"//            response.body.data.should.have.property (\"agree\").and.equal (true);\r",
+									"//      });\r",
+									"//         // Assertion\r",
+									"//     it ('should return expected DOB', function(){\r",
+									"//         var x = environment.dob_year;\r",
+									"//         var y = environment.dob_month;\r",
+									"//         var n = environment.dob_day;\r",
+									"//         var expDOB = x+\"-\"+y+\"-\"+n;\r",
+									"//         response.body.data.should.have.property (\"dob\").and.equal(expDOB);\r",
+									"//      });\r",
+									"    \r",
+									"// });\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									" pm.environment.set(\"Far\", pm.variables.replaceIn(\"Farid\"));\r",
+									" pm.environment.set(\"studentLastName\", pm.variables.replaceIn(\"{{$randomLastName}}\"));\r",
+									" pm.environment.set(\"studentEmail\", pm.variables.replaceIn(\"{{$randomEmail}}\"));\r",
+									" pm.environment.set(\"dob_year\", _.random(1935,2013));\r",
+									"pm.environment.set(\"dob_day\", _.random(1,28));\r",
+									" pm.environment.set(\"dob_month\", _.random(1,12));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/student/TTCkwbZh",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"TTCkwbZh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"eval(globals.pm);\r",
+									"\r",
+									"describe('Verify if student successfully update password', function() {\r",
+									"    // Assertion\r",
+									"    it('should return status 200 ok', function() {\r",
+									"        response.should.have.status(200);\r",
+									"    })\r",
+									"\r",
+									"    //Assertion\r",
+									"    it('should return success as true',function(){\r",
+									" response.body.should.have.property (\"success\").and.equal (true);\r",
+									"})\r",
+									"\r",
+									"\r",
+									"\r",
+									"// Assertion\r",
+									"it('should return message login success',function(){\r",
+									" response.body.should.have.property (\"message\").and.equal ( \"Password update success\");\r",
+									"})\r",
+									"\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9xYS50YWx0ZWt0Yy5jb20iLCJhdWQiOiJUSEVfQVVESUVOQ0UiLCJpYXQiOjE2MTg5ODQ5NDIsIm5iZiI6MTYxODk4NDk1MiwiZXhwIjoxNjE5MDcxMzQyLCJpc19hZG1pbiI6ZmFsc2UsImRhdGEiOnsiaWQiOiI5MSIsImZpcnN0X25hbWUiOiJGYXJpIiwibGFzdF9uYW1lIjoiYXBpIiwiZW1haWwiOiJUdGVzdGFwaUBnbWFpbC5jb20iLCJzdHVkZW50SWQiOiJUVENrd2JaaCJ9fQ.156EW3EAkHRm1-VObCOpJF9_cGJvf_JjXH-Mxsq1vgU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"test1234\",\n    \"confirmPassword\": \"test1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/updatePassword/TTCkwbZh",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"updatePassword",
+								"TTCkwbZh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with new password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"eval(globals.pm);\r",
+									"\r",
+									"describe('Verify if student successfully login or not', function() {\r",
+									"    // Assertion\r",
+									"    it('should return status 200 ok', function() {\r",
+									"        response.should.have.status(200);\r",
+									"    })\r",
+									"\r",
+									"    //Assertion\r",
+									"    it('should return success as true',function(){\r",
+									" response.body.should.have.property (\"success\").and.equal (true);\r",
+									"})\r",
+									"\r",
+									"//Assertion\r",
+									"it('should return status code 200',function(){\r",
+									" response.body.should.have.property (\"status code\").and.equal (200);\r",
+									"})\r",
+									"\r",
+									"// Assertion\r",
+									"it('should return message login success',function(){\r",
+									" response.body.should.have.property (\"message\").and.equal ( \"Login Success\");\r",
+									"})\r",
+									"\r",
+									"\r",
+									"\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"Ttestapi@gmail.com\",\n    \"password\": \"test1234\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9xYS50YWx0ZWt0Yy5jb20iLCJhdWQiOiJUSEVfQVVESUVOQ0UiLCJpYXQiOjE2MTY1NDg4MDUsIm5iZiI6MTYxNjU0ODgxNSwiZXhwIjoxNjE2NjM1MjA1LCJpc19hZG1pbiI6ZmFsc2UsImRhdGEiOnsiaWQiOiIxMzQiLCJmaXJzdF9uYW1lIjoiSGFzc2FuIiwibGFzdF9uYW1lIjoiVXBkYXRlIiwiZW1haWwiOiJoYXNhbi51cGRhdGUxQGdtYWlsLmNvbSIsInN0dWRlbnRJZCI6IlRUQ2R3QWlMIn19.m6KjNQPBdqR8AmOtBbbOP-JfoLCeMyUw5DanxxFP3Gs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/student/TTClY7dF",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"TTClY7dF"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify if student removed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/student/TTClY7dF",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"TTClY7dF"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "http://bigstickcarpet.com/postman-bdd/dist/postman-bdd.js",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setGlobalVariable('pm', responseBody)\r",
+							"eval(globals.pm)\r",
+							"describe('global variable stored',function(){\r",
+							"    it('check status ok',function(){\r",
+							"        response.should.have.status(200);\r",
+							"    })\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9xYS50YWx0ZWt0Yy5jb20iLCJhdWQiOiJUSEVfQVVESUVOQ0UiLCJpYXQiOjE2MTcxMzU2MDEsIm5iZiI6MTYxNzEzNTYxMSwiZXhwIjoxNjE3MjIyMDAxLCJpc19hZG1pbiI6ZmFsc2UsImRhdGEiOnsiaWQiOiIyNjIiLCJmaXJzdF9uYW1lIjoiQWRlZWwiLCJsYXN0X25hbWUiOiJGYXJpZCIsImVtYWlsIjoiRmFyaWQyMUBnbWFpbC5jb20iLCJzdHVkZW50SWQiOiJUVENHTDM5biJ9fQ.1mO0wtD-dE3bnX6Mz7EZERPGFakLx1hqcpWcRJveclA\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://bigstickcarpet.com/postman-bdd/dist/postman-bdd.js",
+					"protocol": "http",
+					"host": [
+						"bigstickcarpet",
+						"com"
+					],
+					"path": [
+						"postman-bdd",
+						"dist",
+						"postman-bdd.js"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Setup postmanBDD",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setGlobalVariable('pm', responseBody) // public",
+							"// private"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://bigstickcarpet.com/postman-bdd/dist/postman-bdd.js",
+					"protocol": "http",
+					"host": [
+						"bigstickcarpet",
+						"com"
+					],
+					"path": [
+						"postman-bdd",
+						"dist",
+						"postman-bdd.js"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Setup postmanBDD",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setGlobalVariable('pm', responseBody) // public",
+							"// private"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://bigstickcarpet.com/postman-bdd/dist/postman-bdd.js",
+					"protocol": "http",
+					"host": [
+						"bigstickcarpet",
+						"com"
+					],
+					"path": [
+						"postman-bdd",
+						"dist",
+						"postman-bdd.js"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://qa.taltektc.com/api/student/TTCkGuoi\n\n",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://qa.taltektc.com/api/student/TTCkGuoi\n\n",
+					"protocol": "http",
+					"host": [
+						"qa",
+						"taltektc",
+						"com"
+					],
+					"path": [
+						"api",
+						"student",
+						"TTCkGuoi\n\n"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
